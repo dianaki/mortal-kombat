@@ -19,6 +19,8 @@ const player2 = {
 };
 
 function createPlayer(className, player) {
+  const arenas = document.querySelector('.arenas');
+  
   const playersField = document.createElement('div');
   playersField.classList.add(className);
 
@@ -44,7 +46,6 @@ function createPlayer(className, player) {
   img.src = player.img;
   character.appendChild(img);
 
-  const arenas = document.querySelector('.arenas');
   arenas.appendChild(playersField);
 }
 
