@@ -1,3 +1,5 @@
+const arenas = document.querySelector('.arenas');
+
 const player1 = {
   name: 'Scorpion',
   hp: 80,
@@ -19,8 +21,6 @@ const player2 = {
 };
 
 function createPlayer(className, player) {
-  const arenas = document.querySelector('.arenas');
-  
   const playersField = document.createElement('div');
   playersField.classList.add(className);
 
