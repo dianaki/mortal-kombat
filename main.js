@@ -57,9 +57,15 @@ function createPlayer(player) {
   return playersField;
 };
 
+function randomNummer() {
+  randomHp =  Math.ceil(Math.random() * 20);
+
+  return randomHp;
+}
+
 function changeHP(player) {
   const playerLife = document.querySelector('.player' + player.player + ' .life');
-  player.hp -= Math.ceil(Math.random() * 20);
+  player.hp -= randomNummer();
   playerLife.style.width = player.hp + '%';
 
   if (player.hp <= 0) {
@@ -76,12 +82,10 @@ function playerWins(name) {
 };
 
 function whoWinner(player1, player2) {
-  if (player1.hp === 0 || player2.hp === 0) {
-    if (player1.hp > player2.hp) {
-      arenas.appendChild(playerWins(player1.name));
-    } else if (player2.hp > player1.hp) {
-      arenas.appendChild(playerWins(player2.name));
-    }
+  if (player1.hp > player2.hp) {
+    arenas.appendChild(playerWins(player1.name));
+  } else if (player2.hp > player1.hp) {
+    arenas.appendChild(playerWins(player2.name));
   }
   randomButton.disabled = true;
 };
